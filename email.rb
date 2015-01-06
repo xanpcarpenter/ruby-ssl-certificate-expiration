@@ -15,8 +15,8 @@ EOF
 
 # Define the main headers.
 part1 =<<EOF
-From: Certificate Bot <no-reply@xantrion.com>
-To: Patrick Carpenter <pcarpenter@xantrion.com>
+From: Certificate Bot <pcarpenter@xantrion.com>
+To: 1-Stop IT <it.dept@1stoplighting.com>
 Subject: Certificate Expiry Report
 MIME-Version: 1.0
 Content-Type: multipart/mixed; boundary=#{marker}
@@ -47,7 +47,7 @@ mailtext = part1 + part2 + part3
 # Let's put our code in safe area
 begin 
   Net::SMTP.start('xan-den-ex01.xantrion-hq.local') do |smtp|
-       smtp.sendmail(mailtext, 'no-reply@xantrion.com',
+       smtp.sendmail(mailtext, 'from-pcarpenter@xantrion.com',
                                  ['pcarpenter@xantrion.com'])
   end
 rescue Exception => e  
