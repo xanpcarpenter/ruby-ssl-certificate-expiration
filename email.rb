@@ -46,9 +46,9 @@ mailtext = part1 + part2 + part3
 
 # Let's put our code in safe area
 begin 
-  Net::SMTP.start('xan-den-ex01.xantrion-hq.local') do |smtp|
-       smtp.sendmail(mailtext, 'from-pcarpenter@xantrion.com',
-                                 ['pcarpenter@xantrion.com'])
+  Net::SMTP.start('xan-den-ex01.xantrion-hq.local', 25) do |smtp| #server not accepting anon relay
+       smtp.sendmail(mailtext, 'noreply-certbot@xantrion.com',
+                                 ['it.dept@1stoplighting.com'])
   end
 rescue Exception => e  
     print "Exception occured: " + e  
