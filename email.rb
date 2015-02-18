@@ -9,8 +9,7 @@ encodedcontent = [filecontent].pack("m") 	#base 64
 marker = "AUNIQUEMARKER"
 
 body =<<EOF
-This is a sample automated e-mail that could be sent on a regular interval.
-
+This is a sample automated e-mail that could be sent on a regular interval.\r\n
 EOF
 
 # Define the main headers.

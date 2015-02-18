@@ -1,6 +1,5 @@
 #~/usr/bin/ruby
 require 'certcheck.rb'
-require 'email.rb'
 
 time = Time.now.getutc
 
@@ -27,6 +26,7 @@ output.write("-----------------------\r\n\r\n\r\n\r\n\r\nThe following certs wer
 log_input = File.read('https.log')
 output.write(log_input)
 output.close
+require 'email.rb'
 send_email
 
 	
